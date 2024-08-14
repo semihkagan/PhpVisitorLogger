@@ -5,13 +5,10 @@
 // Kullanıcının IP adresini al
 function getUserIpAddr() {
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        // IP adresi proxy sunucusu tarafından gönderilmişse
         $ip = $_SERVER['HTTP_CLIENT_IP'];
     } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        // IP adresi yük dengeleyici tarafından gönderilmişse
         $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
     } else {
-        // Doğrudan erişim varsa
         $ip = $_SERVER['REMOTE_ADDR'];
     }
     return $ip;
