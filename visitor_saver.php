@@ -2,7 +2,6 @@
 // https://github.com/semihkagan/PhpVisitorSaver
 // Lütfen yorum satırlarını silmeyin :/ ❤️
 
-// Kullanıcının IP adresini al
 function getUserIpAddr() {
     if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
         $ip = $_SERVER['HTTP_CLIENT_IP'];
@@ -14,13 +13,8 @@ function getUserIpAddr() {
     return $ip;
 }
 
-// Kullanıcının IP adresini al
 $user_ip = getUserIpAddr();
-
-// Zaman damgası ile birlikte IP adresini kaydet
 $log_entry = date('Y-m-d H:i:s') . " - " . $user_ip . PHP_EOL;
-
-// visitors.log dosyasına kaydet
 file_put_contents('visitors.log', $log_entry, FILE_APPEND);
 
 echo "IP adresi kaydedildi.";
