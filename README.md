@@ -1,7 +1,5 @@
 # PHP Visitor Saver - Log User IP Addresses 📋
 
-![PHP Visitor Saver](asset/main.png)
-
 This PHP script logs the IP addresses of visitors to your website, along with a timestamp. It appends each entry to a `visitors.log` file for tracking purposes. 
 
 ## Features ✨
