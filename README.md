@@ -59,3 +59,19 @@ echo "IP adresi kaydedildi.";
 // https://github.com/semihkagan tarafından yazılmıştır.
 ?>
 ```
+
+### 4. Modify Log File Path 🔄
+
+If you want to change the log file's location or name, update the path in the `file_put_contents` function.
+
+## Requirements 🛠️
+
+- **PHP**: Ensure PHP is installed and properly configured on your server.
+
+## License 📜
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+Developed with ❤️ by [Semih Kagan](https://github.com/semihkagan).
