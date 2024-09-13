@@ -12,11 +12,20 @@ function getUserIpAddr() {
     }
     return $ip;
 }
-
 $user_ip = getUserIpAddr();
-$log_entry = date('Y-m-d H:i:s') . " - " . $user_ip . PHP_EOL;
-file_put_contents('visitors.log', $log_entry, FILE_APPEND);
 
+$last_log = @file('visitors.log');
+$last_num = 0;
+if ($last_log) {
+    $last_line = trim(end($last_log));
+    if (preg_match('/^\[(\d+)\]/', $last_line, $matches)) {
+        $last_num = (int)$matches[1];
+    }
+}
+
+$new_num = $last_num + 1;
+$log_entry = "[$new_num] - " . $user_ip . " [" . date('Y-m-d H:i:s') . "]" . PHP_EOL;
+file_put_contents('visitors.log', $log_entry, FILE_APPEND);
 echo "IP adresi kaydedildi.";
 
 // https://github.com/semihkagan tarafından yazılmıştır.
