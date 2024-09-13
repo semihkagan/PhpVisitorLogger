@@ -3,7 +3,7 @@
 // Lütfen yorum satırlarını silmeyin :/ ❤️
 
 // Settings
-$log_enabled = false; 
+$log_enabled = true; 
 $total_visitors_enabled = true; 
 // JSON Files
 $json_file = 'total_visitors.json';
